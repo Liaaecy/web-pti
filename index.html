@@ -1,0 +1,1076 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Prodi PTI Raharja</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style id="page-style">
+/* Layout: header navy lengket; hero bermotif kertas grid dengan kartu menu cepat yang menumpang di tepinya; isi satu kolom 1080px; footer navy tiga kolom; bilah Mode Editor di bawah */
+:root{
+  --bg:#f5f9ff; --surface:#ffffff; --ink:#0f1f3d; --muted:#53627e; --line:#d8e3f4;
+  --brand:#1257c9; --brand-ink:#ffffff; --brand-text:#1257c9;
+  --hero-a:#0a3a8c; --hero-m:#1663d6; --hero-b:#2ea3f2; --glow:rgba(120,200,255,.45);
+  --accent:#ffa31a; --accent-text:#b05800; --accent-ink:#2a1700; --accent-soft:#fff2dc; --chip:#e3efff;
+  --ok:#14864a; --ok-soft:#dcf5e7; --danger:#c0392b; --shade:rgba(10,18,40,.45);
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c1426; --surface:#14203a; --ink:#e8eefa; --muted:#9eadc8; --line:#25345a;
+  --brand:#1450b8; --brand-ink:#f3f7ff; --brand-text:#8ec2ff;
+  --hero-a:#082c6b; --hero-m:#1250b8; --hero-b:#1d7fc4; --glow:rgba(120,200,255,.22);
+  --accent:#ffb340; --accent-text:#ffb340; --accent-ink:#2a1700; --accent-soft:#3b2a12; --chip:#1c2c50;
+  --ok:#4cc184; --ok-soft:#163a2a; --danger:#ef6b5b; --shade:rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1426; --surface:#14203a; --ink:#e8eefa; --muted:#9eadc8; --line:#25345a;
+  --brand:#1450b8; --brand-ink:#f3f7ff; --brand-text:#8ec2ff;
+  --hero-a:#082c6b; --hero-m:#1250b8; --hero-b:#1d7fc4; --glow:rgba(120,200,255,.22);
+  --accent:#ffb340; --accent-text:#ffb340; --accent-ink:#2a1700; --accent-soft:#3b2a12; --chip:#1c2c50;
+  --ok:#4cc184; --ok-soft:#163a2a; --danger:#ef6b5b; --shade:rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--hero-a)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--brand-text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance}
+h2{font-family:var(--display);font-weight:600;font-size:26px;line-height:1.2;margin:0}
+h3{font-family:var(--display);font-weight:600;font-size:18px;line-height:1.3;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(90deg,var(--hero-a),var(--hero-m));color:var(--brand-ink);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;flex:none;cursor:pointer}
+.logo{width:40px;height:40px;border-radius:10px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:.02em}
+.brand small{display:block;font-size:11px;opacity:.8;letter-spacing:.06em;text-transform:uppercase;line-height:1.3}
+.brand strong{display:block;font-family:var(--display);font-weight:600;font-size:16px;line-height:1.25}
+.nav{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:inherit;text-decoration:none;font-size:14px;font-weight:500;padding:7px 11px;border-radius:8px;white-space:nowrap;opacity:.85}
+.nav a:hover{opacity:1;background:rgba(255,255,255,.1)}
+.nav a[aria-current="page"]{opacity:1;background:rgba(255,255,255,.16);font-weight:600}
+.edit-toggle{flex:none;font:inherit;font-size:13px;font-weight:700;border:0;border-radius:8px;padding:8px 12px;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+@media (max-width:760px){
+  .top .wrap{flex-wrap:wrap;gap:8px 12px}
+  .nav{order:3;width:100%;margin-left:0}
+  .edit-toggle{margin-left:auto}
+}
+
+/* hero */
+.hero{background:var(--brand);color:var(--brand-ink)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px;align-items:end;padding-block:36px 44px}
+.hero .eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;font-weight:600;margin-bottom:10px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(32px,5.4vw,54px);line-height:1.04;margin:0 0 14px}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{max-width:56ch;opacity:.9;font-size:16px}
+.hero .btns{margin-top:22px}
+.glance{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:6px 18px}
+.glance div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+.glance div:first-child{border-top:0}
+.glance span{opacity:.8;font-size:13.5px}
+.glance b{font-family:var(--display);font-weight:600;font-size:18px;font-variant-numeric:tabular-nums;text-align:right}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:28px 32px}}
+
+.page-head{background:var(--brand);color:var(--brand-ink)}
+.page-head .wrap{padding-block:26px 30px}
+.page-head h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4.4vw,40px);line-height:1.1;margin:0 0 6px}
+.page-head p{opacity:.85;max-width:60ch}
+
+main{display:block}
+.sections{display:grid;gap:44px;padding-block:32px 64px}
+.sections > *{min-width:0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 16px;margin-bottom:16px}
+.sec-head p{margin-top:4px}
+
+/* tombol */
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:9px;cursor:pointer;border:1px solid var(--brand);background:var(--brand);color:var(--brand-ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px;line-height:1.3}
+.btn.accent{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.on-dark{background:transparent;color:var(--brand-ink);border-color:rgba(255,255,255,.35)}
+.btn.small{font-size:13px;padding:6px 11px;border-radius:8px}
+.btn.add{background:var(--accent-soft);color:var(--ink);border:1px dashed var(--accent)}
+.btn:disabled{opacity:.6;cursor:progress}
+.linkbtn{font:inherit;font-size:14px;font-weight:600;color:var(--brand-text);background:none;border:0;padding:0;cursor:pointer}
+.ed{display:flex;gap:6px;flex-wrap:wrap}
+.ed button{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--muted);padding:5px 10px;border-radius:7px;cursor:pointer}
+.ed button:hover{color:var(--ink);border-color:var(--muted)}
+.ed button.del:hover,.ed button.del[data-confirm="1"]{color:var(--danger);border-color:var(--danger)}
+
+/* panel umum */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.prose{display:grid;gap:10px;max-width:68ch}
+.empty{padding:26px 20px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:14px}
+.placeholder{color:var(--muted);font-style:italic}
+
+/* sambutan */
+.welcome{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--chip);color:var(--brand-text);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:22px;overflow:hidden;position:relative;flex:none}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.welcome .who{margin-top:14px;font-weight:600}
+.welcome .who span{display:block;font-weight:400;color:var(--muted);font-size:14px}
+@media (max-width:560px){.welcome{grid-template-columns:1fr}}
+
+/* profil */
+.visi{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.4vw,24px);line-height:1.35;max-width:46ch}
+ol.misi{margin:0;padding-left:22px;display:grid;gap:8px}
+.akr{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.akr b{font-family:var(--display);font-weight:800;font-size:28px;color:var(--brand-text)}
+
+/* dosen */
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px;align-content:start}
+.person .top-row{display:flex;gap:14px;align-items:center}
+.person .avatar{width:58px;height:58px;font-size:18px}
+.person h3{font-size:16.5px}
+.person .role{font-size:13.5px;color:var(--muted)}
+.person dl{margin:0;display:grid;gap:6px;font-size:13.5px}
+.person dt{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.person dd{margin:0;overflow-wrap:anywhere}
+.mono{font-family:var(--mono);font-size:12.5px}
+
+/* berita */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chips button{font:inherit;font-size:13.5px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 13px;border-radius:999px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.chips button span{color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
+.chips button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.chips button[aria-pressed="true"] span{color:var(--brand-ink);opacity:.8}
+.news{display:grid;gap:14px}
+.post{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.cal{border:1px solid var(--line);border-radius:10px;text-align:center;overflow:hidden;align-self:start;background:var(--surface)}
+.cal b{display:block;font-family:var(--display);font-weight:800;font-size:24px;line-height:1.1;padding-top:6px;font-variant-numeric:tabular-nums}
+.cal span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-bottom:6px}
+.cal i{display:block;font-style:normal;font-size:10.5px;background:var(--chip);color:var(--muted);padding:2px 0;font-variant-numeric:tabular-nums}
+.post .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:4px}
+.post .body{margin-top:8px;display:grid;gap:8px;color:var(--ink)}
+.post .body.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post .foot{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-top:10px}
+.tag{background:var(--chip);color:var(--ink);padding:1px 8px;border-radius:6px;font-weight:600;font-size:12px}
+.tag.peng{background:var(--accent-soft)}
+@media (max-width:520px){.post{grid-template-columns:1fr}.cal{display:flex;gap:6px;align-items:baseline;padding:4px 10px;justify-self:start}.cal b{font-size:16px;padding:0}.cal span,.cal i{padding:0;background:none;font-size:12px}}
+
+/* dokumen */
+.search{min-width:0;flex:1 1 240px;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px 6px 4px 14px;max-width:560px;margin-bottom:14px}
+.search:focus-within{outline:2px solid var(--accent)}
+.search svg{flex:none;color:var(--muted)}
+.search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;color:var(--ink);padding:9px 0}
+.search input:focus{outline:none}
+.count{font-size:13px;color:var(--muted);padding-right:8px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row.nocode{grid-template-columns:minmax(0,1fr) auto}
+.code{font-family:var(--mono);font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.info strong{display:block;font-weight:600;line-height:1.35}
+.info .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:var(--muted);margin-top:3px;align-items:center}
+.actions{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;align-items:center}
+.open{font-size:13.5px;font-weight:600;text-decoration:none;border:1px solid var(--brand-text);color:var(--brand-text);padding:6px 14px;border-radius:8px;white-space:nowrap}
+.open:hover{background:var(--accent-soft)}
+.copy{font:inherit;font-size:13px;font-weight:600;background:transparent;border:1px solid var(--line);color:var(--muted);padding:6px 11px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.copy:hover{color:var(--ink);border-color:var(--muted)}
+.nolink{font-size:12.5px;color:var(--muted);border:1px dashed var(--line);padding:5px 10px;border-radius:8px;white-space:nowrap}
+@media (max-width:640px){.row{grid-template-columns:minmax(0,1fr);gap:8px}.actions{justify-content:flex-start}}
+
+/* kontak */
+.contact dd{margin:6px 0 0;font-size:16px;overflow-wrap:anywhere;user-select:text}
+.contact dl{margin:0}
+
+/* footer */
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{padding-block:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px}
+
+/* bilah editor */
+.edbar{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:2px solid var(--accent);box-shadow:0 -6px 20px rgba(0,0,0,.12);padding-bottom:env(safe-area-inset-bottom,0px)}
+.edbar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-block:10px}
+.edbar strong{color:var(--ink)}
+.edbar p{font-size:13px;color:var(--muted);max-width:70ch}
+body.editing .sections{padding-bottom:140px}
+
+/* modal formulir */
+.modal{position:fixed;inset:0;z-index:40;background:var(--shade);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));overflow-y:auto}
+.sheet{background:var(--surface);color:var(--ink);border-radius:16px;width:min(680px,100%);max-height:100%;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.sheet header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:1}
+.sheet header button{font:inherit;font-size:22px;line-height:1;border:0;background:none;color:var(--muted);cursor:pointer;padding:4px 8px}
+.sheet form{padding:20px 22px 22px}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field{display:grid;gap:5px;font-size:13px;font-weight:600;min-width:0;align-content:start}
+.field.full{grid-column:1 / -1}
+.field em{font-style:normal;font-weight:600;color:var(--danger);margin-left:3px}
+.field input,.field select,.field textarea{font:inherit;font-weight:400;font-size:14.5px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%;min-width:0}
+.field textarea{resize:vertical;line-height:1.5}
+.field small{font-weight:400;color:var(--muted)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+.photo{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.photo .avatar{width:64px;height:64px}
+.fgroup{grid-column:1 / -1;font-family:var(--display);font-weight:600;font-size:15px;padding-top:8px;border-top:1px solid var(--line);margin-top:4px}
+.fgroup:first-child{border-top:0;padding-top:0;margin-top:0}
+.form-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px}
+.fmsg{font-size:13.5px;color:var(--muted)}
+.fmsg.err{color:var(--danger)}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+
+/* notifikasi */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;font-weight:500;max-width:calc(100% - 32px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.toast.err{background:var(--danger);color:#fff}
+body.editing .toast{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+@media (prefers-reduced-motion:no-preference){.toast{animation:pop .2s ease-out}@keyframes pop{from{opacity:0;transform:translate(-50%,8px)}}}
+
+/* ===== tampilan v2 ===== */
+.grid-paper{background-color:var(--hero-a);background-image:radial-gradient(circle at 88% 10%,var(--glow),transparent 36%),linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(125deg,var(--hero-a) 0%,var(--hero-m) 55%,var(--hero-b) 100%);background-size:auto,32px 32px,32px 32px,auto}
+.hero .wrap{padding-block:52px 84px}
+.hero h1{font-size:clamp(34px,5.8vw,60px);margin-bottom:18px}
+.hero h1 .pre{display:block;font-size:.42em;font-weight:600;letter-spacing:.01em;opacity:.85;margin-bottom:6px}
+.hero h1::after{content:"";display:block;width:72px;height:5px;border-radius:3px;background:var(--accent);margin-top:18px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px}
+.hero .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.glance{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);box-shadow:0 12px 40px rgba(4,20,60,.25)}
+.glance .gl-title{display:block;border-top:0;padding:12px 0 4px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:700}
+.glance .gl-title + div{border-top:0}
+.glance b{font-size:22px}
+.quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:-44px;position:relative;z-index:2}
+.tile{display:grid;gap:10px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:var(--ink);box-shadow:0 10px 30px rgba(20,32,57,.08);cursor:pointer;min-width:0}
+.tile .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--chip);color:var(--brand-text)}
+.tile:nth-child(2) .ic{background:var(--accent-soft);color:var(--accent-text)}
+.tile:nth-child(3) .ic{background:var(--ok-soft);color:var(--ok)}
+.tile:nth-child(4) .ic{background:var(--chip);color:var(--brand-text)}
+.tile strong{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.25}
+.tile span{font-size:13.5px;color:var(--muted);line-height:1.45}
+.tile em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--accent-text)}
+.tile:hover{border-color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){.tile{transition:transform .15s ease,border-color .15s ease}.tile:hover{transform:translateY(-3px)}}
+@media (max-width:860px){.quick{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.tile{padding:14px}.tile span{display:none}.tile strong{font-size:15.5px}}
+.kicker{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);font-weight:700;margin-bottom:6px}
+h2{font-size:clamp(23px,3vw,30px)}
+.sections{gap:56px;padding-block:44px 72px}
+.page-head .wrap{padding-block:40px 44px}
+.page-head .kicker{color:var(--accent)}
+.page-head h1{font-size:clamp(30px,4.8vw,46px)}
+.welcome{padding:28px;gap:28px;border-left:5px solid var(--accent)}
+.welcome .avatar{width:104px;height:104px;border-radius:18px;font-size:30px}
+.welcome .prose p:first-child{font-size:17px}
+/* dosen */
+.people{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.person{padding:0;gap:0;overflow:hidden;border-radius:16px}
+.portrait{position:relative;aspect-ratio:1/1.1;max-width:100%;background:linear-gradient(160deg,var(--chip),var(--surface));display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:44px;color:var(--brand-text);overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.pbody{display:grid;gap:10px;padding:16px 18px 18px;align-content:start}
+.pbody h3{font-size:16.5px;line-height:1.3}
+.pbody .role{font-size:13px;color:var(--muted);margin-top:2px}
+.pbody dl{margin:0;display:grid;gap:8px;font-size:13.5px;padding-top:10px;border-top:1px solid var(--line)}
+.pbody dt{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.pbody dd{margin:0;overflow-wrap:anywhere}
+/* profil */
+.visi-band{background:var(--accent-soft);border-radius:20px;padding:clamp(22px,4vw,40px)}
+.visi-band .visi{font-size:clamp(20px,2.8vw,28px);max-width:40ch;margin-top:10px}
+.misi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;counter-reset:misi;margin:0;padding:0}
+.misi-grid li{list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 64px;position:relative;counter-increment:misi}
+.misi-grid li::before{content:counter(misi,decimal-leading-zero);position:absolute;left:18px;top:16px;font-family:var(--display);font-weight:800;font-size:22px;color:var(--accent-text);font-variant-numeric:tabular-nums}
+/* kartu umum lebih lembut */
+.post,.list,.panel{border-radius:16px}
+.empty{border-radius:16px;padding:34px 20px}
+/* footer */
+footer.site{background:linear-gradient(125deg,var(--hero-a) 0%,var(--hero-m) 70%,var(--hero-b) 100%);color:var(--brand-ink);border-top:0;font-size:14px}
+footer.site .wrap{padding-block:40px 18px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1.2fr);gap:28px}
+footer.site h4{margin:0 0 10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+footer.site p{opacity:.85;line-height:1.55;overflow-wrap:anywhere}
+footer.site .fnav{display:grid;gap:6px}
+footer.site .fnav a{color:inherit;opacity:.85;text-decoration:none}
+footer.site .fnav a:hover{opacity:1;text-decoration:underline}
+footer.site .fbrand{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+footer.site .fbrand strong{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.25}
+footer.site .fbottom{display:block;padding-block:16px 26px;border-top:1px solid rgba(255,255,255,.14);opacity:.7;font-size:12.5px}
+@media (max-width:760px){footer.site .wrap{grid-template-columns:1fr}}
+body.editing footer.site .fbottom{padding-bottom:130px}
+/* akreditasi */
+.glance a.gl-link{display:flex;justify-content:space-between;gap:12px;padding:12px 0;color:inherit;text-decoration:none;border-top:0}
+.glance a.gl-link span{opacity:.85;font-size:13.5px}
+.glance a.gl-link:hover span{opacity:1;text-decoration:underline}
+.gl-empty{font-family:var(--body);font-size:13.5px;font-weight:600;opacity:.8}
+[hidden],.modal[hidden]{display:none!important}
+/* sambutan */
+.welcome2{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,4vw,40px)}
+.wl-card{display:grid;gap:8px;justify-items:center;text-align:center;position:sticky;top:calc(84px + env(safe-area-inset-top,0px))}
+.wl-card .avatar{width:180px;height:216px;border-radius:16px;font-size:44px;box-shadow:0 10px 26px rgba(20,32,57,.12)}
+.wl-card strong{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.3;margin-top:6px}
+.wl-card span{font-size:13.5px;color:var(--muted);line-height:1.45}
+.wl-col{min-width:0;max-width:70ch}
+.wl-text{position:relative;padding-top:18px;font-size:16px;line-height:1.85;color:var(--ink)}
+.wl-text p{margin:0 0 1.05em;text-align:justify;text-justify:inter-word;hyphens:auto;-webkit-hyphens:auto}
+.wl-text .qmark{position:absolute;top:-30px;left:-6px;font-family:Georgia,"Times New Roman",serif;font-size:104px;line-height:1;color:var(--accent);opacity:.32;pointer-events:none}
+.wl-text .salam{font-family:var(--display);font-style:italic;font-weight:600;font-size:17px;color:var(--brand-text);text-align:left}
+.wl-text .lead-p{font-size:18px;line-height:1.7;font-weight:500}
+.wl-text .sign{margin-top:26px;display:grid;gap:2px;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.wl-text .sign strong{color:var(--ink);font-size:16.5px;font-family:var(--display);font-weight:600}
+.sign-line{display:block;width:56px;height:3px;border-radius:2px;background:var(--accent);margin-bottom:12px}
+.wl-text.clamped{max-height:560px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.wl-more{margin-top:6px}
+@media (max-width:760px){
+  .welcome2{grid-template-columns:1fr}
+  .wl-card{position:static;grid-template-columns:auto minmax(0,1fr);justify-items:start;text-align:left;align-items:center;column-gap:16px;row-gap:2px}
+  .wl-card .avatar{width:84px;height:100px;font-size:26px;grid-row:span 2}
+  .wl-card strong{margin-top:0;align-self:end}
+  .wl-card span{align-self:start}
+  .wl-text{font-size:15.5px;padding-top:0}
+  .wl-text .lead-p{font-size:16px;font-weight:600}
+  .wl-text .qmark{display:none}
+  .welcome2{padding:20px 18px}
+}
+.pmain{min-width:0}
+.post.has-img .pmain{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+.ptext{min-width:0}
+.post-img{margin:0;border-radius:14px;overflow:hidden;background:var(--chip);box-shadow:0 10px 26px rgba(20,32,57,.14);border:1px solid var(--line)}
+.post-img img{display:block;width:100%;height:auto;max-height:360px;object-fit:cover;object-position:top}
+.post.has-img h3{font-size:19px;line-height:1.3}
+@media (max-width:760px){
+  .post.has-img .pmain{grid-template-columns:1fr;gap:14px}
+  .post-img{max-width:340px}
+  .post-img img{max-height:none}
+}
+.attach{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;margin-top:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.post .foot .attach{flex-basis:100%;margin-top:2px}
+.open.alt{border-color:var(--line);color:var(--ink)}
+.has-file{font-weight:600;color:var(--ok)}
+.filebox{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:10px 12px;border:1px dashed var(--line);border-radius:10px;background:var(--bg)}
+.fname{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13.5px;min-width:0;overflow-wrap:anywhere}
+.fname.none{font-weight:500;color:var(--muted)}
+/* kartu dosen ringkas */
+.people{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.person{display:grid;grid-template-columns:84px minmax(0,1fr);gap:14px;padding:14px;align-items:start;border-radius:14px}
+.portrait{aspect-ratio:auto;width:84px;height:100px;border-radius:12px;font-size:24px}
+.pbody{padding:0;gap:8px}
+.pbody{min-width:0}
+.pbody h3{font-size:15px;line-height:1.3;overflow-wrap:anywhere}
+.pbody .role,.pbody dd{overflow-wrap:anywhere}
+.pbody .role{font-size:12.5px;line-height:1.4}
+.pbody dl{font-size:12.5px;gap:5px;padding-top:8px}
+.pbody dt{font-size:10px}
+.attach-ic{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;background:var(--chip);color:var(--brand-text)}
+.attach-info{display:grid;gap:1px;min-width:0}
+.attach-info .label{font-size:10.5px}
+.attach-info strong{font-weight:600;line-height:1.35;overflow-wrap:anywhere}
+.attach-info small{font-size:12.5px;color:var(--muted)}
+@media (max-width:560px){.attach{grid-template-columns:auto minmax(0,1fr)}.attach .actions{grid-column:1 / -1;justify-content:flex-start}}
+.photo.wide{display:grid;gap:10px;justify-items:start}
+.ph-wide{display:block;width:100%;max-width:420px;max-height:260px;object-fit:contain;border-radius:10px;background:var(--chip);border:1px solid var(--line)}
+.ph-none{display:grid;place-items:center;height:140px;color:var(--muted);font-size:13px;font-weight:500;border-style:dashed}
+.akr-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.akr-main{display:grid;gap:12px;align-content:start;justify-items:start;padding:clamp(22px,4vw,36px);background:linear-gradient(140deg,var(--accent-soft),var(--surface))}
+.akr-main .kicker{margin:0}
+.akr-grade{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.05;color:var(--brand-text);overflow-wrap:anywhere}
+.status{display:inline-block;font-size:13px;font-weight:700;padding:4px 11px;border-radius:999px}
+.status.ok{background:var(--ok-soft);color:var(--ok)}
+.status.warn{background:var(--accent-soft);color:var(--danger)}
+.akr-facts{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));align-content:start}
+.akr-facts div{padding:20px 24px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+.akr-facts dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.akr-facts dd{margin:6px 0 0;font-weight:600;font-size:16px;overflow-wrap:anywhere}
+@media (max-width:700px){.akr-card{grid-template-columns:1fr}.akr-facts div{border-left:0}}
+@media (max-width:640px){.row,.row.nocode{grid-template-columns:minmax(0,1fr)}}
+</style>
+<div id="root"></div>
+<script type="application/json" id="state">{"v":1,"profil":{"singkatan":"PTI","nama":"Pendidikan Teknologi Informasi","kampus":"Universitas Raharja","tagline":"","sambutanNama":"Dedeh Supriyanti.,S.Kom.,M.TI","sambutanJabatan":"Ketua Program Studi","sambutanTeks":"Assalamu’alaikum warahmatullahi wabarakatuh.\n\nSelamat datang di website resmi Program Studi Pendidikan Teknologi Informasi, Fakultas Keguruan dan Ilmu Pendidikan, Universitas Raharja.\n\nPuji syukur ke hadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya. Website ini hadir sebagai media informasi, komunikasi, dan publikasi bagi mahasiswa, dosen, alumni, calon mahasiswa, serta masyarakat luas untuk mengenal lebih dekat Program Studi Pendidikan Teknologi Informasi Universitas Raharja.\n\nProgram Studi Pendidikan Teknologi Informasi berkomitmen untuk menghasilkan lulusan yang unggul, kompeten, inovatif, dan adaptif terhadap perkembangan teknologi digital. Kami mengintegrasikan kompetensi kependidikan dengan penguasaan teknologi informasi, sehingga lulusan tidak hanya mampu menjadi pendidik di bidang teknologi informasi, tetapi juga memiliki peluang berkarier sebagai tenaga profesional di bidang IT, pengembang media pembelajaran digital, instruktur atau pelatih teknologi, serta technopreneur yang kreatif dan berdaya saing.\n\nDalam menghadapi era transformasi digital, kami terus mendorong pengembangan pembelajaran yang inovatif, berbasis proyek (project-based learning), serta pemanfaatan teknologi terkini, termasuk kecerdasan buatan (Artificial Intelligence), multimedia interaktif, dan teknologi pembelajaran digital. Upaya ini didukung oleh peningkatan kualitas pembelajaran, penelitian, dan pengabdian kepada masyarakat, serta penguatan kerja sama dengan berbagai pihak.\n\nKami percaya bahwa pendidikan yang berkualitas tidak hanya membekali mahasiswa dengan pengetahuan dan keterampilan, tetapi juga membangun karakter, kreativitas, kemampuan berpikir kritis, dan semangat untuk terus belajar sepanjang hayat.\n\nMelalui website ini, kami berharap seluruh pengunjung dapat memperoleh informasi yang lengkap mengenai profil program studi, kurikulum, kegiatan akademik, penelitian, prestasi, kerja sama, serta berbagai peluang pengembangan kompetensi mahasiswa.\n\nKami mengundang seluruh pemangku kepentingan untuk bersama-sama mendukung kemajuan Program Studi Pendidikan Teknologi Informasi dalam mewujudkan pendidikan yang relevan dengan kebutuhan zaman dan berkontribusi bagi kemajuan bangsa.\n\nTerima kasih atas kepercayaan dan dukungan yang diberikan kepada Program Studi Pendidikan Teknologi Informasi Universitas Raharja.\n\nWassalamu’alaikum warahmatullahi wabarakatuh.\n\nKetua Program Studi Pendidikan Teknologi Informasi\nFakultas Keguruan dan Ilmu Pendidikan\nUniversitas Raharja","sambutanFoto":"7b339d7b7679aa49fc5f68c7f8befe27","visi":"“Menjadi Program Studi Pendidikan Teknologi Informasi yang unggul, inovatif, dan adaptif dalam mengintegrasikan pendidikan dan teknologi digital untuk menghasilkan lulusan yang kompeten, kreatif, serta berdaya saing global.”","misi":"Menyelenggarakan pendidikan di bidang Pendidikan Teknologi Informasi yang berkualitas, inovatif, dan adaptif terhadap perkembangan teknologi digital.\n\nMengembangkan penelitian di bidang pendidikan dan teknologi informasi untuk menghasilkan inovasi yang bermanfaat bagi masyarakat.\n\nMelaksanakan pengabdian kepada masyarakat melalui penerapan ilmu pendidikan dan teknologi informasi guna meningkatkan literasi dan kompetensi digital.\n\nMenghasilkan lulusan yang kompeten sebagai pendidik bidang teknologi informasi, tenaga profesional IT, pengembang media pembelajaran digital, dan technopreneur yang kreatif serta berdaya saing global.\n\nMembangun kerja sama strategis dengan institusi pendidikan, dunia usaha, dunia industri, dan pemangku kepentingan untuk mendukung pengembangan kompetensi lulusan.\n\nMenerapkan tata kelola program studi yang profesional, transparan, dan berorientasi pada peningkatan mutu berkelanjutan.","sejarah":"Program Studi Pendidikan Teknologi Informasi merupakan salah satu program studi di Universitas Raharja yang dikembangkan untuk menjawab kebutuhan sumber daya manusia di bidang pendidikan dan teknologi informasi. Program studi ini hadir sebagai bagian dari komitmen Universitas Raharja dalam mendukung kemajuan pendidikan melalui pemanfaatan teknologi digital dan inovasi pembelajaran.\n\nUniversitas Raharja memiliki perjalanan panjang dalam bidang pendidikan teknologi informasi, yang dimulai pada tahun 1994 melalui pendirian Lembaga Pendidikan dan Pelatihan Komputer (LPPK) Raharja. Seiring dengan perkembangan kebutuhan masyarakat dan kemajuan teknologi, lembaga tersebut berkembang menjadi AMIK Raharja Informatika pada tahun 1999, kemudian menjadi STMIK Raharja pada tahun 2000. Selanjutnya, pada tahun 2019, Raharja resmi berkembang menjadi Universitas Raharja berdasarkan Surat Keputusan Kementerian Riset, Teknologi, dan Pendidikan Tinggi Nomor 254/KPT/I/2019.\n\nDalam perkembangannya, Program Studi Pendidikan Teknologi Informasi hadir untuk mengintegrasikan ilmu kependidikan dengan kompetensi teknologi informasi. Program studi ini berorientasi pada pengembangan calon pendidik yang memiliki kemampuan pedagogik, profesional, sosial, dan kepribadian, serta mampu memanfaatkan teknologi untuk menciptakan proses pembelajaran yang kreatif, inovatif, dan efektif.\n\nMelalui kurikulum yang mengintegrasikan teori, praktik, dan pembelajaran berbasis proyek, Program Studi Pendidikan Teknologi Informasi mendorong mahasiswa untuk mengembangkan keterampilan dalam bidang pemrograman, multimedia pembelajaran interaktif, teknologi pembelajaran digital, serta pemanfaatan teknologi informasi sesuai dengan perkembangan zaman.\n\nProgram studi ini juga berkomitmen untuk meningkatkan kualitas pendidikan, penelitian, dan pengabdian kepada masyarakat, serta memperluas kerja sama dengan institusi pendidikan dan dunia industri. Lulusan diharapkan mampu berkarier sebagai pendidik bidang teknologi informasi, tenaga profesional IT, pengembang media pembelajaran digital, maupun technopreneur.\n\nDengan semangat inovasi dan peningkatan mutu berkelanjutan, Program Studi Pendidikan Teknologi Informasi Universitas Raharja terus berupaya menghasilkan lulusan yang kompeten, kreatif, adaptif, dan siap berkontribusi dalam transformasi digital di bidang pendidikan maupun masyarakat luas.","akreditasi":"","akreditasiKet":""},"kontak":{"alamat":"","email":"","telepon":"","jam":"","maps":""},"akreditasi":{"peringkat":"","lembaga":"","nomorSK":"","tanggalSK":"","berlaku":"","sertifikat":"","keterangan":""},"dosen":[{"nama":"Euis Sitinur Aisyah, S.Kom.,M.TI","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"","keahlian":"Teknologi","email":"euis@raharja.info","id":"mvjauyqnismt","dibuat":"2026-10-22","foto":"1813d509cd0e20a105fe2ccf9b4223a5"},{"foto":"0092913bfe4fd9989fcc391a4f429a9a","nama":"Padeli.,S.Kom.,M.Kom","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"0409077301.","keahlian":"Teknologi","email":"padeli@raharja.info","id":"mvklrcsjq552","dibuat":"2026-10-23"},{"foto":"ad1a97ba0b65b2ca3b3523e485fd5631","nama":"ANDRI CAHYO PURNOMO, S.Pd.,M.Pd","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"0408069001","keahlian":"Pendidikan","email":"andricahyo@raharja.info","id":"mvlqh24z716b","dibuat":"2026-10-24"},{"foto":"af2f5a532a033f6e36599cd668368fcf","nama":"MAYASARI\tS.Pd.,M.Pd","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"","keahlian":"0421087304","email":"mayasari@raharja.info","id":"mvlqks76aw8y","dibuat":"2026-10-24"},{"foto":"35c34e11599d6b86a2ca7e0b3f38611d","nama":"Ferry Sudarto, S.Kom., M.Pd., M.TI.","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"Ferry Sudarto, S.Kom., M.Pd., M.TI.","keahlian":"Pendidikan","email":"ferry@raharja.info","id":"mvlqqercamcn","dibuat":"2026-10-24"},{"foto":"cd7409bd92f58d87a1f2842912e6a4a3","nama":"Assoc. Prof. Dr. Al Bahra Bin Ladjamudin, M.Kom.","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"0402037101","keahlian":"Dr. AL BAHRA LB\t.,S.Kom.,M.Kom","email":"albahra@raharja.info","id":"mvlqw179r1qj","dibuat":"2026-10-24"},{"foto":"e8308d1d1144d6a4fd3144f327c517bd","nama":"Dr. H. Suhada, S.Ag., M.Pd.I.","jabatan":"Dosen Tetap Program Studi Pendidikan Teknologi Informasi","nidn":"0406077104","keahlian":"Pendidikan","email":"","id":"mvlqz367ax4r","dibuat":"2026-10-24"}],"berita":[{"kategori":"Berita","tanggal":"2026-10-24","judul":"FAKULTAS KEGURUAN  DAN ILMU PENDIDIKAN","isi":"📚 𝗕𝗲𝗹𝗮𝗷𝗮𝗿 𝗵𝗮𝗿𝗶 𝗶𝗻𝗶, 𝗺𝗲𝗻𝗴𝗶𝗻𝘀𝗽𝗶𝗿𝗮𝘀𝗶 𝗲𝘀𝗼𝗸 ✨\n\nKalau kamu punya semangat untuk berbagi ilmu sekaligus berkembang bersama teknologi, 𝗙𝗮𝗸𝘂𝗹𝘁𝗮𝘀 𝗞𝗲𝗴𝘂𝗿𝘂𝗮𝗻 𝗱𝗮𝗻 𝗜𝗹𝗺𝘂 𝗣𝗲𝗻𝗱𝗶𝗱𝗶𝗸𝗮𝗻 𝗨𝗻𝗶𝘃𝗲𝗿𝘀𝗶𝘁𝗮𝘀 𝗥𝗮𝗵𝗮𝗿𝗷𝗮 siap menjadi tempat yang tepat untuk mengembangkan potensimu.\n\n🎓 𝗣𝗶𝗹𝗶𝗵𝗮𝗻 𝗣𝗿𝗼𝗴𝗿𝗮𝗺 𝗦𝘁𝘂𝗱𝗶:\n* Pendidikan Teknologi Informasi (S.Pd)\n\n✨ Tersedia kelas Reguler, Online, dan Paket yang dapat disesuaikan dengan kebutuhanmu.\n\n𝗬𝘂𝗸, 𝗺𝘂𝗹𝗮𝗶 𝗹𝗮𝗻𝗴𝗸𝗮𝗵𝗺𝘂 𝗯𝗲𝗿𝘀𝗮𝗺𝗮 𝗨𝗻𝗶𝘃𝗲𝗿𝘀𝗶𝘁𝗮𝘀 𝗥𝗮𝗵𝗮𝗿𝗷𝗮! 🚀\n\n🌐 join.raharja.ac.id\n📱 0811-8114-6745 | 0858-1999-6745 | 0811-914-6745 | 021-5529692","link":"https://www.instagram.com/p/Da4OL2mkvuV/","id":"mvlrd30ypoep","dibuat":"2026-10-24","gambar":"d8716c61275648fda72961507e43383f","lampiranJudul":""},{"kategori":"Berita","tanggal":"2026-08-26","gambar":"6ef10636071617e64d9e95eef0ab9284","judul":"Workshop Guru Pembimbing Karya Tulis Ilmiah SMK 10 Kota Tangerang","isi":"Workshop Guru Pembimbing Karya Tulis Ilmiah, Pembicara : M.Yusuf.,M.Kom., Dan Dedeh Supriyanti, S.Kom.,M.TI","lampiranJudul":"https://docs.google.com/presentation/d/1xSPKU8Lq6DX1A7tk4LkiiZsrrO1tS-nP3dEbv0i01vE/edit?slide=id.p1#slide=id.p1","link":"","id":"mvqd3rzpg0i2","dibuat":"2026-10-27"}],"dokumen":[{"kategori":"Akreditasi","judul":"DOKUMEN AKREDITASI PTI","link":"https://drive.google.com/file/d/1AT_ur285zQeY85XGONXux0LXmlyQGUmt/view?usp=sharing","kode":"247141","revisi":"-","tanggal":"6 Juni2030","format":"PDF","id":"mvlq1pj6xr3e","dibuat":"2026-10-24","file":"ff381d4f1f5400b93a871e5fc4fd2de6","fileName":"AKRE.JPG"},{"judul":"Buku Panduan SKRIPSI Program Studi PTI","link":"https://drive.google.com/file/d/1EP4Fey56IQzEDhUObtu0k9usruTPNF9T/view?usp=sharing","kategori":"Pedoman","kode":"","revisi":"","tanggal":"2026","format":"","id":"mvolw94gdrdc","dibuat":"2026-10-26"},{"judul":"WEB LPPM","link":"https://claude.ai/artifact/8rcZj2XxdRGFgHpyRZChtU","kategori":"Formulir","kode":"","revisi":"","tanggal":"2026","format":"","id":"mvom0lgsom5a","dibuat":"2026-10-26"},{"judul":"DATA IKU NON AKADEMIK","link":"https://docs.google.com/spreadsheets/d/1-Ot9_iVgx4Y-QI6XoZHtm0q3GOX5MXie/edit?usp=sharing&ouid=116123467051889028996&rtpof=true&sd=true","kategori":"Mutu","kode":"","revisi":"","tanggal":"","format":"","id":"mvq44no8v4ai","dibuat":"2026-10-27"},{"judul":"DATA INPUT IKU PRODI","link":"https://docs.google.com/spreadsheets/d/1IkNtEALyw8vBG1GDDNzLpNMF5INcmq5a/edit?usp=sharing&ouid=116123467051889028996&rtpof=true&sd=true","kategori":"","kode":"","revisi":"","tanggal":"","format":"","id":"mvq4877bwrxe","dibuat":"2026-10-27"},{"judul":"MHS PRESTASI ALL PRODI","link":"https://docs.google.com/spreadsheets/d/1IkNtEALyw8vBG1GDDNzLpNMF5INcmq5a/edit?usp=sharing&ouid=103023454732440431975&rtpof=true&sd=true","kategori":"","kode":"","revisi":"","tanggal":"","format":"","id":"mvq4968g98nb","dibuat":"2026-10-27"}],"kategori":["Kurikulum & RPS","Pedoman","SOP","Formulir","Akreditasi & Mutu","SK & Kalender","Akreditasi","Mutu"]}</script>
+<script id="app">
+(function(){
+"use strict";
+
+/* ===== data ===== */
+var DEF = {
+  v:1,
+  profil:{singkatan:"PTI",nama:"Pendidikan Teknologi Informasi",kampus:"Universitas Raharja",tagline:"",sambutanNama:"",sambutanJabatan:"Ketua Program Studi",sambutanTeks:"",sambutanFoto:"",visi:"",misi:"",sejarah:"",akreditasi:"",akreditasiKet:""},
+  kontak:{alamat:"",email:"",telepon:"",jam:"",maps:""},
+  akreditasi:{peringkat:"",lembaga:"",nomorSK:"",tanggalSK:"",berlaku:"",sertifikat:"",keterangan:""},
+  dosen:[], berita:[], dokumen:[],
+  kategori:["Kurikulum & RPS","Pedoman","SOP","Formulir","Akreditasi & Mutu","SK & Kalender"]
+};
+function load(){
+  var s = {};
+  try { s = JSON.parse(document.getElementById("state").textContent) || {}; } catch(e){}
+  var o = {};
+  Object.keys(DEF).forEach(function(k){ o[k] = s[k] !== undefined ? s[k] : JSON.parse(JSON.stringify(DEF[k])); });
+  o.profil = Object.assign({}, DEF.profil, s.profil || {});
+  o.kontak = Object.assign({}, DEF.kontak, s.kontak || {});
+  o.akreditasi = Object.assign({}, DEF.akreditasi, s.akreditasi || {});
+  if (!o.akreditasi.peringkat && o.profil.akreditasi) o.akreditasi.peringkat = o.profil.akreditasi;
+  if (!o.akreditasi.keterangan && o.profil.akreditasiKet) o.akreditasi.keterangan = o.profil.akreditasiKet;
+  ["dosen","berita","dokumen","kategori"].forEach(function(k){ if(!Array.isArray(o[k])) o[k] = []; });
+  return o;
+}
+var S = load();
+
+/* sumber halaman, untuk menyimpan versi baru */
+var TITLE = "Prodi PTI Raharja";
+var FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">';
+var RESET = ':root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}img{max-width:100%}[hidden]{display:none!important}';
+var STYLE_SRC = document.getElementById("page-style").textContent;
+var APP_SRC = document.getElementById("app").textContent;
+function buildDoc(st){
+  var json = JSON.stringify(st).replace(/</g,"\\u003c");
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + RESET + '</style></head><body>'
+    + '<title>' + TITLE + '</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n' + FONTS + '\n'
+    + '<style id="page-style">' + STYLE_SRC + '</style>\n<div id="root"></div>\n'
+    + '<script type="application/json" id="state">' + json + '<\/script>\n'
+    + '<script id="app">' + APP_SRC + '<\/script>\n</body></html>';
+}
+
+/* ===== keadaan tampilan ===== */
+var VIEWS = ["beranda","profil","akreditasi","dosen","berita","dokumen","kontak"];
+var NAMES = {beranda:"Beranda",profil:"Profil",akreditasi:"Akreditasi",dosen:"Dosen",berita:"Berita",dokumen:"Dokumen",kontak:"Kontak"};
+var view = "beranda", docCat = "Semua", docQ = "", newsCat = "Semua";
+var canEdit = false, editMode = false, art = null, assets = null, busy = false;
+var root = document.getElementById("root");
+
+var store = {
+  get:function(k){ try { return sessionStorage.getItem(k); } catch(e){ return null; } },
+  set:function(k,v){ try { if (v == null) sessionStorage.removeItem(k); else sessionStorage.setItem(k, v); } catch(e){} }
+};
+
+/* ===== utilitas ===== */
+var BULAN = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(m){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]; }); }
+function paras(t){ return String(t||"").split(/\n+/).map(function(x){return x.trim();}).filter(Boolean).map(function(p){ return "<p>" + esc(p) + "</p>"; }).join(""); }
+function lines(t){ return String(t||"").split("\n").map(function(x){ return x.replace(/^\s*(\d+[.)]|[-•*])\s*/,"").trim(); }).filter(Boolean); }
+function isUrl(l){ return /^https?:\/\//i.test(String(l||"").trim()); }
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+function today(){ var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); }
+function parts(iso){ var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||""); return m ? {y:+m[1], m:+m[2], d:+m[3]} : null; }
+function fmtDate(iso){ var p = parts(iso); return p ? p.d + " " + BULAN[p.m-1] + " " + p.y : esc(iso||""); }
+function initials(n){ var w = String(n||"").replace(/,.*$/,"").replace(/\b(Dr|Prof|Ir|Drs|Dra|H|Hj)\.?\s+/gi,"").trim().split(/\s+/).filter(Boolean); return ((w[0]||"?")[0] + (w.length>1 ? w[w.length-1][0] : "")).toUpperCase(); }
+function blob(id){ return !id ? "" : /^data:/.test(id) ? id : "/_blob/" + encodeURIComponent(id); }
+function avatar(name, foto){ return '<div class="avatar" aria-hidden="true">' + esc(initials(name)) + (foto ? '<img src="' + esc(blob(foto)) + '" alt="" onerror="this.remove()">' : "") + "</div>"; }
+function P(){ return S.profil; }
+function fullName(){ return "Program Studi " + P().nama; }
+
+/* ===== bagian bersama ===== */
+function edButtons(type, id){
+  if (!editMode) return "";
+  return '<div class="ed"><button type="button" data-act="edit" data-type="' + type + '" data-id="' + esc(id) + '">Ubah</button>'
+       + '<button type="button" class="del" data-act="del" data-type="' + type + '" data-id="' + esc(id) + '">Hapus</button></div>';
+}
+function addBtn(type, label){ return editMode ? '<button type="button" class="btn add" data-act="add" data-type="' + type + '">+ ' + esc(label) + "</button>" : ""; }
+function emptyBox(text, editText){ return '<div class="empty">' + esc(editMode && editText ? editText : text) + "</div>"; }
+
+function header(){
+  var nav = VIEWS.map(function(v){ return '<a href="#' + v + '" data-go="' + v + '"' + (v===view ? ' aria-current="page"' : "") + ">" + NAMES[v] + "</a>"; }).join("");
+  var tgl = canEdit ? '<button type="button" class="edit-toggle" data-act="' + (editMode ? "exit-edit" : "enter-edit") + '">' + (editMode ? "Selesai mengedit" : "Mode Editor") + "</button>" : "";
+  return '<header class="top"><div class="wrap">'
+    + '<a class="brand" href="#beranda" data-go="beranda"><div class="logo">' + esc((P().singkatan||"PTI").slice(0,4)) + '</div><div><small>' + esc(P().kampus) + "</small><strong>" + esc(P().nama) + "</strong></div></a>"
+    + '<nav class="nav" aria-label="Menu utama">' + nav + "</nav>" + tgl + "</div></header>";
+}
+function pageHead(title, sub, kicker){
+  return '<section class="page-head grid-paper"><div class="wrap"><span class="kicker">' + esc(kicker || P().kampus) + "</span><h1>" + esc(title) + "</h1>" + (sub ? "<p>" + esc(sub) + "</p>" : "") + "</div></section>";
+}
+function footer(){
+  var k = S.kontak, p = P();
+  var kontak = [k.alamat, k.email, k.telepon].filter(Boolean).map(function(x){ return "<p>" + esc(x).replace(/\n/g,"<br>") + "</p>"; }).join("");
+  return '<footer class="site"><div class="wrap">'
+    + '<div><div class="fbrand"><div class="logo">' + esc((p.singkatan||"PTI").slice(0,4)) + "</div><strong>" + esc(fullName()) + "</strong></div><p>" + esc(p.kampus) + "</p></div>"
+    + '<div><h4>Menu</h4><div class="fnav">' + VIEWS.map(function(v){ return '<a href="#' + v + '" data-go="' + v + '">' + NAMES[v] + "</a>"; }).join("") + "</div></div>"
+    + "<div><h4>Kontak</h4>" + (kontak || "<p>Informasi kontak segera tersedia.</p>") + "</div>"
+    + '</div><div class="wrap fbottom">\u00a9 ' + new Date().getFullYear() + " " + esc(fullName()) + ", " + esc(p.kampus) + "</div></footer>";
+}
+
+/* ===== beranda ===== */
+var ICON = {
+  profil:'<path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M7 10.5V15c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.5"/>',
+  dosen:'<circle cx="9" cy="8" r="3"/><path d="M3 19c0-3.3 2.7-5 6-5s6 1.7 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.9.2 5.5 1.7 5.5 4.8"/>',
+  berita:'<path d="M4 6h12v13H6a2 2 0 0 1-2-2z"/><path d="M16 9h4v8a2 2 0 0 1-2 2"/><path d="M7 10h6M7 14h6"/>',
+  dokumen:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>'
+};
+function icon(k){ return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICON[k] + "</svg>"; }
+function secHead(kicker, title, right){
+  return '<div class="sec-head"><div>' + (kicker ? '<span class="kicker">' + esc(kicker) + "</span>" : "") + "<h2>" + title + "</h2></div>" + (right ? '<div class="btns">' + right + "</div>" : "") + "</div>";
+}
+function personCard(d){
+  var dl = "";
+  if (d.keahlian) dl += "<div><dt>Bidang keahlian</dt><dd>" + esc(d.keahlian) + "</dd></div>";
+  if (d.nidn) dl += '<div><dt>NIDN</dt><dd class="mono">' + esc(d.nidn) + "</dd></div>";
+  if (d.email) dl += "<div><dt>Email</dt><dd>" + esc(d.email) + "</dd></div>";
+  return '<article class="person"><div class="portrait" aria-hidden="true">' + esc(initials(d.nama))
+    + (d.foto ? '<img src="' + esc(blob(d.foto)) + '" alt="" onerror="this.remove()">' : "") + "</div>"
+    + '<div class="pbody"><div><h3>' + esc(d.nama) + '</h3><div class="role">' + esc(d.jabatan || "Dosen") + "</div></div>"
+    + (dl ? "<dl>" + dl + "</dl>" : "") + edButtons("dosen", d.id) + "</div></article>";
+}
+function vBeranda(){
+  var p = P();
+  var lead = p.tagline || ("Informasi akademik, profil, dosen, berita, dan dokumen resmi " + fullName() + " " + p.kampus + ".");
+  var html = '<section class="hero grid-paper"><div class="wrap"><div>'
+    + '<div class="eyebrow">' + esc(p.kampus) + "</div>"
+    + '<h1><span class="pre">Program Studi</span>' + esc(p.nama) + "</h1>"
+    + '<p class="lead">' + esc(lead) + "</p>"
+    + '<div class="btns"><a class="btn accent" href="#dokumen" data-go="dokumen">Lihat dokumen</a><a class="btn on-dark" href="#profil" data-go="profil">Profil prodi</a><a class="btn on-dark" href="#akreditasi" data-go="akreditasi">Akreditasi</a>'
+    + (editMode ? '<button type="button" class="btn on-dark" data-act="form" data-type="profil">Ubah profil &amp; beranda</button>' : "") + "</div></div>"
+    + '<div class="glance"><span class="gl-title">Sekilas prodi</span>'
+    + (S.akreditasi.peringkat ? '<a class="gl-link" href="#akreditasi" data-go="akreditasi"><span>Akreditasi \u2192</span><b>' + esc(S.akreditasi.peringkat) + "</b></a>" : "")
+    + "<div><span>Dosen</span><b>" + S.dosen.length + "</b></div>"
+    + "<div><span>Dokumen</span><b>" + S.dokumen.length + "</b></div>"
+    + "<div><span>Berita &amp; pengumuman</span><b>" + S.berita.length + "</b></div>"
+    + "</div></div></section>";
+
+  var tiles = [
+    ["profil","Profil & Visi Misi","Visi, misi, dan sejarah program studi.", "Lihat profil"],
+    ["dosen","Dosen & Staf","Tenaga pengajar dan bidang keahliannya.", S.dosen.length + " dosen"],
+    ["berita","Berita & Pengumuman","Kegiatan, agenda, dan info akademik terbaru.", S.berita.length + " kabar"],
+    ["dokumen","Dokumen Prodi","Kurikulum, pedoman, SOP, dan formulir.", S.dokumen.length + " dokumen"]
+  ];
+  html += '<div class="wrap"><nav class="quick" aria-label="Menu cepat">' + tiles.map(function(t){
+    return '<a class="tile" href="#' + t[0] + '" data-go="' + t[0] + '"><div class="ic">' + icon(t[0]) + "</div><strong>" + t[1] + "</strong><span>" + t[2] + "</span><em>" + esc(t[3]) + " →</em></a>";
+  }).join("") + "</nav></div>";
+
+  html += '<div class="wrap sections">';
+
+  if (p.sambutanTeks || editMode){
+    html += "<section>" + secHead("Sambutan", esc(p.sambutanJabatan || "Ketua Program Studi"),
+      editMode ? '<button type="button" class="btn small ghost" data-act="form" data-type="profil">Ubah sambutan</button>' : "");
+    html += p.sambutanTeks ? sambutanHtml(p) : emptyBox("", "Sambutan belum diisi. Klik \u201cUbah sambutan\u201d untuk menulisnya.");
+    html += "</section>";
+  }
+
+  if (S.dosen.length || editMode){
+    html += "<section>" + secHead("Pengajar", "Dosen Program Studi",
+      addBtn("dosen","Tambah dosen") + (S.dosen.length > 4 ? '<a class="btn small ghost" href="#dosen" data-go="dosen">Semua dosen</a>' : ""));
+    html += S.dosen.length ? '<div class="people">' + S.dosen.slice(0,4).map(personCard).join("") + "</div>"
+      : emptyBox("", "Belum ada dosen. Klik “+ Tambah dosen”.");
+    html += "</section>";
+  }
+
+  var news = sortedNews().slice(0,3);
+  html += "<section>" + secHead("Kabar terbaru", "Berita &amp; Pengumuman",
+      addBtn("berita","Tambah berita") + (S.berita.length > 3 ? '<a class="btn small ghost" href="#berita" data-go="berita">Semua berita</a>' : ""))
+    + (news.length ? '<div class="news">' + news.map(function(b){ return postHtml(b, true); }).join("") + "</div>" : emptyBox("Belum ada berita atau pengumuman.", "Belum ada berita. Klik “+ Tambah berita” untuk menulis yang pertama."))
+    + "</section>";
+
+  var docs = S.dokumen.slice(-5).reverse();
+  html += "<section>" + secHead("Arsip", "Dokumen Terbaru",
+      addBtn("dokumen","Tambah dokumen") + (S.dokumen.length ? '<a class="btn small ghost" href="#dokumen" data-go="dokumen">Semua dokumen</a>' : ""))
+    + (docs.length ? '<div class="list">' + docs.map(docRow).join("") + "</div>" : emptyBox("Belum ada dokumen.", "Belum ada dokumen. Klik “+ Tambah dokumen” lalu isi judul dan link-nya."))
+    + "</section>";
+
+  return html + "</div>";
+}
+
+/* ===== sambutan ===== */
+function sambutanHtml(p){
+  var raw = String(p.sambutanTeks || "").replace(/\r/g, "");
+  var blocks = raw.split(/\n\s*\n/).map(function(x){ return x.trim(); }).filter(Boolean);
+  if (blocks.length === 1 && blocks[0].indexOf("\n") >= 0) blocks = blocks[0].split("\n").map(function(x){ return x.trim(); }).filter(Boolean);
+  var body = "", sign = [], closed = false, first = true;
+  blocks.forEach(function(bl){
+    if (closed){ sign = sign.concat(bl.split("\n").map(function(x){ return x.trim(); }).filter(Boolean)); return; }
+    if (/^(assalamu|wassalamu|salam sejahtera|salam\b|om swastiastu|shalom|namo buddhaya)/i.test(bl)){
+      body += '<p class="salam">' + esc(bl) + "</p>";
+      if (/^wassalamu/i.test(bl)) closed = true;
+      return;
+    }
+    body += "<p" + (first ? ' class="lead-p"' : "") + ">" + esc(bl).replace(/\n/g, "<br>") + "</p>";
+    first = false;
+  });
+  var name = p.sambutanNama, jab = p.sambutanJabatan || "Ketua Program Studi";
+  var signLines = sign.length ? sign : (name ? [jab] : []);
+  var signHtml = (name || signLines.length) ? '<div class="sign"><span class="sign-line"></span>' + (name ? "<strong>" + esc(name) + "</strong>" : "")
+    + signLines.map(function(l){ return "<span>" + esc(l) + "</span>"; }).join("") + "</div>" : "";
+  var long = blocks.length > 4;
+  return '<div class="welcome2">'
+    + '<aside class="wl-card">' + avatar(name || jab, p.sambutanFoto) + (name ? "<strong>" + esc(name) + "</strong>" : "") + "<span>" + esc(jab) + "</span></aside>"
+    + '<div class="wl-col"><div class="wl-text' + (long ? " clamped" : "") + '" lang="id"><span class="qmark" aria-hidden="true">\u201c</span>' + body + signHtml + "</div>"
+    + (long ? '<button type="button" class="linkbtn wl-more" data-act="welcome-more">Baca sambutan lengkap</button>' : "") + "</div></div>";
+}
+
+/* ===== profil ===== */
+function vProfil(){
+  var p = P(), misi = lines(p.misi);
+  var html = pageHead("Profil Program Studi", fullName() + ", " + p.kampus, "Tentang kami");
+  html += '<div class="wrap sections">';
+  if (editMode) html += '<div><button type="button" class="btn accent" data-act="form" data-type="profil">Ubah profil</button></div>';
+  var any = p.visi || misi.length || p.sejarah || S.akreditasi.peringkat;
+  if (!any) return html + emptyBox("Profil program studi belum diisi.", "Profil belum diisi. Klik “Ubah profil” untuk mengisi visi, misi, sejarah, dan akreditasi.") + "</div>";
+  if (p.visi) html += '<section class="visi-band"><span class="kicker">Visi</span><p class="visi">' + esc(p.visi) + "</p></section>";
+  if (misi.length) html += "<section>" + secHead("Misi", "Langkah mewujudkan visi") + '<ol class="misi-grid">' + misi.map(function(m){ return "<li>" + esc(m) + "</li>"; }).join("") + "</ol></section>";
+  if (p.sejarah) html += "<section>" + secHead("Sejarah", "Sejarah Singkat") + '<div class="prose">' + paras(p.sejarah) + "</div></section>";
+  var A = S.akreditasi;
+  if (A.peringkat) html += "<section>" + secHead("Mutu", "Akreditasi", '<a class="btn small ghost" href="#akreditasi" data-go="akreditasi">Detail akreditasi</a>')
+    + '<div class="panel"><div class="akr"><b>' + esc(A.peringkat) + "</b>" + akrStatus(A) + "</div>"
+    + (A.lembaga ? '<p class="muted" style="margin-top:6px">' + esc(A.lembaga) + "</p>" : "") + "</div></section>";
+  return html + "</div>";
+}
+
+/* ===== akreditasi ===== */
+function akrStatus(a){
+  if (!parts(a.berlaku)) return "";
+  var ok = a.berlaku >= today();
+  return '<span class="status ' + (ok ? "ok" : "warn") + '">' + (ok ? "Berlaku hingga " : "Masa berlaku berakhir ") + fmtDate(a.berlaku) + "</span>";
+}
+function isAkrDoc(d){ return /akreditasi|mutu/i.test(d.kategori || ""); }
+function vAkreditasi(){
+  var a = S.akreditasi;
+  var html = pageHead("Akreditasi Program Studi", fullName() + ", " + P().kampus + ".", "Mutu");
+  html += '<div class="wrap sections">';
+  if (editMode) html += '<div><button type="button" class="btn accent" data-act="form" data-type="akreditasi">Ubah data akreditasi</button></div>';
+  if (!a.peringkat && !a.nomorSK && !a.lembaga){
+    html += emptyBox("Data akreditasi belum diisi.", "Data akreditasi belum diisi. Klik \u201cUbah data akreditasi\u201d untuk mengisi peringkat, nomor SK, dan masa berlaku.");
+  } else {
+    var facts = [["Lembaga akreditasi", a.lembaga], ["Nomor SK", a.nomorSK], ["Tanggal SK", a.tanggalSK ? fmtDate(a.tanggalSK) : ""], ["Berlaku sampai", a.berlaku ? fmtDate(a.berlaku) : ""]]
+      .filter(function(x){ return x[1]; });
+    html += '<section class="akr-card"><div class="akr-main"><span class="kicker">Peringkat akreditasi</span><b class="akr-grade">' + esc(a.peringkat || "\u2013") + "</b>" + akrStatus(a)
+      + (isUrl(a.sertifikat) ? '<a class="btn accent" href="' + esc(a.sertifikat) + '" target="_blank" rel="noopener">Lihat sertifikat</a>' : "") + "</div>"
+      + (facts.length ? '<dl class="akr-facts">' + facts.map(function(x){ return "<div><dt>" + x[0] + "</dt><dd>" + esc(x[1]) + "</dd></div>"; }).join("") + "</dl>" : "")
+      + "</section>";
+    if (a.keterangan) html += '<section class="prose">' + paras(a.keterangan) + "</section>";
+  }
+  var docs = S.dokumen.filter(isAkrDoc);
+  html += "<section>" + secHead("Dokumen pendukung", "Dokumen Akreditasi &amp; Mutu",
+      editMode ? '<button type="button" class="btn add" data-act="add" data-type="dokumen" data-kat="Akreditasi &amp; Mutu">+ Tambah dokumen</button>' : "")
+    + (docs.length ? '<div class="list">' + docs.map(docRow).join("") + "</div>"
+       : emptyBox("Belum ada dokumen akreditasi.", "Belum ada dokumen. Klik \u201c+ Tambah dokumen\u201d; kategorinya otomatis Akreditasi & Mutu."))
+    + "</section>";
+  return html + "</div>";
+}
+
+/* ===== dosen ===== */
+function vDosen(){
+  var html = pageHead("Dosen & Staf", "Tenaga pengajar " + fullName() + ".", "Pengajar");
+  html += '<div class="wrap sections"><section>';
+  if (editMode) html += '<div class="sec-head"><span class="muted">' + S.dosen.length + " orang</span>" + addBtn("dosen","Tambah dosen") + "</div>";
+  if (!S.dosen.length) html += emptyBox("Data dosen belum tersedia.", "Belum ada dosen. Klik “+ Tambah dosen”.");
+  else html += '<div class="people">' + S.dosen.map(personCard).join("") + "</div>";
+  return html + "</section></div>";
+}
+
+/* ===== berita ===== */
+function sortedNews(){ return S.berita.slice().sort(function(a,b){ return String(b.tanggal||"").localeCompare(String(a.tanggal||"")) || String(b.id).localeCompare(String(a.id)); }); }
+function postHtml(b, short){
+  var p = parts(b.tanggal);
+  var cal = p ? '<div class="cal"><b>' + p.d + "</b><span>" + BULAN[p.m-1].slice(0,3) + "</span><i>" + p.y + "</i></div>" : '<div class="cal"><b>–</b><span>&nbsp;</span></div>';
+  var tagCls = b.kategori === "Pengumuman" ? "tag peng" : "tag";
+  var long = String(b.isi||"").length > 260;
+  var img = b.gambar ? '<figure class="post-img"><img src="' + esc(blob(b.gambar)) + '" alt="' + esc(b.judul) + '" loading="lazy" onerror="this.closest(\'.post\').classList.remove(\'has-img\');this.parentNode.remove()"></figure>' : "";
+  return '<article class="post' + (img ? " has-img" : "") + '">' + cal + '<div class="pmain">' + img + '<div class="ptext">'
+    + '<div class="meta"><span class="' + tagCls + '">' + esc(b.kategori || "Berita") + "</span><span>" + fmtDate(b.tanggal) + "</span></div>"
+    + "<h3>" + esc(b.judul) + "</h3>"
+    + '<div class="body' + (long ? " clamp" : "") + '">' + paras(b.isi) + "</div>"
+    + '<div class="foot">'
+    + (long ? '<button type="button" class="linkbtn" data-act="more">Baca selengkapnya</button>' : "")
+    + attachHtml(b)
+    + edButtons("berita", b.id) + "</div></div></div></article>";
+}
+function linkHost(u){ try { return new URL(u).hostname.replace(/^www\./, ""); } catch(e){ return ""; } }
+function linkKind(u){
+  var h = linkHost(u);
+  if (/drive\.google|docs\.google/.test(h)) return "Google Drive";
+  if (/instagram\.com/.test(h)) return "Instagram";
+  if (/youtube\.com|youtu\.be/.test(h)) return "YouTube";
+  if (/\.pdf(\?|$)/i.test(u)) return "PDF";
+  return h;
+}
+function attachHtml(b){
+  var hasFile = !!b.file, hasLink = isUrl(b.link);
+  if (!hasFile && !hasLink) return "";
+  var kind = [hasFile ? "File " + fileKind(b.fileName) : "", hasLink ? linkKind(b.link) : ""].filter(Boolean).join(" \u00b7 ");
+  var title = b.lampiranJudul || (hasFile ? (b.fileName || "File lampiran") : (linkKind(b.link) === "Instagram" ? "Postingan Instagram" : "Dokumen lampiran"));
+  return '<div class="attach"><div class="attach-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>'
+    + '<div class="attach-info"><span class="label">Lampiran</span><strong>' + esc(title) + "</strong>" + (kind ? "<small>" + esc(kind) + "</small>" : "") + "</div>"
+    + '<div class="actions">' + fileLinkButtons(b.file, b.link) + "</div></div>";
+}
+function vBerita(){
+  var html = pageHead("Berita & Pengumuman", "Kabar kegiatan, agenda, dan pengumuman akademik.");
+  var cats = ["Semua","Berita","Pengumuman","Agenda"];
+  var all = sortedNews();
+  var rows = all.filter(function(b){ return newsCat === "Semua" || (b.kategori||"Berita") === newsCat; });
+  html += '<div class="wrap sections"><section>';
+  html += '<div class="sec-head"><div class="chips" style="margin:0">' + cats.map(function(c){
+    var n = c === "Semua" ? all.length : all.filter(function(b){ return (b.kategori||"Berita") === c; }).length;
+    return '<button type="button" data-act="news-cat" data-cat="' + c + '" aria-pressed="' + (c===newsCat) + '">' + c + " <span>" + n + "</span></button>";
+  }).join("") + "</div>" + addBtn("berita","Tambah berita") + "</div>";
+  html += rows.length ? '<div class="news">' + rows.map(function(b){ return postHtml(b); }).join("") + "</div>"
+    : emptyBox(all.length ? "Tidak ada " + newsCat.toLowerCase() + " saat ini." : "Belum ada berita atau pengumuman.", all.length ? "" : "Belum ada berita. Klik “+ Tambah berita”.");
+  return html + "</section></div>";
+}
+
+/* ===== dokumen ===== */
+function docCats(){ var c = []; S.dokumen.forEach(function(d){ var k = d.kategori || "Lainnya"; if (c.indexOf(k) < 0) c.push(k); }); return c; }
+function docRow(d){
+  var meta = ['<span class="tag">' + esc(d.kategori || "Lainnya") + "</span>"];
+  if (d.format) meta.push("<span>" + esc(d.format) + "</span>");
+  if (d.revisi) meta.push("<span>" + esc(d.revisi) + "</span>");
+  if (d.tanggal) meta.push("<span>Berlaku " + esc(d.tanggal) + "</span>");
+  if (d.file) meta.push('<span class="has-file">File ' + esc(fileKind(d.fileName)) + "</span>");
+  var act = fileLinkButtons(d.file, d.link) || '<span class="nolink">File / link belum ada</span>';
+  return '<div class="row' + (d.kode ? "" : " nocode") + '">' + (d.kode ? '<div class="code">' + esc(d.kode) + "</div>" : "") + '<div class="info"><strong>' + esc(d.judul) + '</strong><div class="meta">' + meta.join("") + "</div></div>"
+    + '<div class="actions">' + act + edButtons("dokumen", d.id) + "</div></div>";
+}
+function fileKind(n){ var m = /\.([a-z0-9]{2,5})$/i.exec(n || ""); return m ? m[1].toUpperCase() : "terlampir"; }
+function fileLinkButtons(file, link){
+  var h = "";
+  if (file) h += '<a class="open" href="' + esc(blob(file)) + '" target="_blank" rel="noopener">Buka file</a>';
+  if (isUrl(link)) h += '<a class="open' + (file ? " alt" : "") + '" href="' + esc(link) + '" target="_blank" rel="noopener">Buka link</a><button type="button" class="copy" data-act="copy" data-link="' + esc(link) + '">Salin link</button>';
+  return h;
+}
+function docListHtml(){
+  var term = docQ.trim().toLowerCase();
+  var rows = S.dokumen.filter(function(d){ return (docCat === "Semua" || (d.kategori||"Lainnya") === docCat) && (!term || (d.judul + " " + (d.kode||"") + " " + (d.kategori||"")).toLowerCase().indexOf(term) >= 0); });
+  if (!S.dokumen.length) return emptyBox("Belum ada dokumen.", "Belum ada dokumen. Klik “+ Tambah dokumen”, isi judul, lalu tempel link-nya.");
+  if (!rows.length) return emptyBox("Tidak ada dokumen yang cocok. Coba kata kunci lain atau pilih “Semua”.");
+  return '<div class="list">' + rows.map(docRow).join("") + "</div>";
+}
+function docCount(){
+  var term = docQ.trim().toLowerCase();
+  return S.dokumen.filter(function(d){ return (docCat === "Semua" || (d.kategori||"Lainnya") === docCat) && (!term || (d.judul + " " + (d.kode||"") + " " + (d.kategori||"")).toLowerCase().indexOf(term) >= 0); }).length;
+}
+function vDokumen(){
+  var cats = docCats();
+  if (docCat !== "Semua" && cats.indexOf(docCat) < 0) docCat = "Semua";
+  var html = pageHead("Dokumen Program Studi", "Kurikulum, pedoman, SOP, formulir, dan dokumen mutu.");
+  html += '<div class="wrap sections"><section>';
+  html += '<div class="sec-head"><label class="search" for="docq" style="margin:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
+    + '<input id="docq" type="search" placeholder="Cari dokumen, misalnya: skripsi, RPS, SOP" autocomplete="off" value="' + esc(docQ) + '"><span class="count" id="doccount">' + docCount() + " dokumen</span></label>"
+    + addBtn("dokumen","Tambah dokumen") + "</div>";
+  if (cats.length) html += '<div class="chips">' + ["Semua"].concat(cats).map(function(c){
+    var n = c === "Semua" ? S.dokumen.length : S.dokumen.filter(function(d){ return (d.kategori||"Lainnya") === c; }).length;
+    return '<button type="button" data-act="doc-cat" data-cat="' + esc(c) + '" aria-pressed="' + (c===docCat) + '">' + esc(c) + " <span>" + n + "</span></button>";
+  }).join("") + "</div>";
+  html += '<div id="doclist">' + docListHtml() + "</div>";
+  return html + "</section></div>";
+}
+
+/* ===== kontak ===== */
+function vKontak(){
+  var k = S.kontak;
+  var html = pageHead("Kontak", "Sekretariat " + fullName() + ", " + P().kampus + ".");
+  html += '<div class="wrap sections"><section>';
+  if (editMode) html += '<div class="sec-head"><span></span><button type="button" class="btn accent" data-act="form" data-type="kontak">Ubah kontak</button></div>';
+  var items = [["Alamat", k.alamat], ["Email", k.email], ["Telepon / WhatsApp", k.telepon], ["Jam layanan", k.jam]].filter(function(x){ return x[1]; });
+  if (!items.length && !isUrl(k.maps)) html += emptyBox("Informasi kontak belum diisi.", "Kontak belum diisi. Klik “Ubah kontak”.");
+  else {
+    html += '<div class="cols contact">' + items.map(function(x){
+      var copy = (x[0] === "Email" || x[0].indexOf("Telepon") === 0) ? '<button type="button" class="copy" style="margin-top:10px" data-act="copy" data-link="' + esc(x[1]) + '">Salin</button>' : "";
+      return '<div class="panel"><dl><dt class="label">' + x[0] + "</dt><dd>" + esc(x[1]).replace(/\n/g,"<br>") + "</dd></dl>" + copy + "</div>";
+    }).join("") + "</div>";
+    if (isUrl(k.maps)) html += '<p style="margin-top:16px"><a class="btn ghost" href="' + esc(k.maps) + '" target="_blank" rel="noopener">Lihat lokasi di peta</a></p>';
+  }
+  return html + "</section></div>";
+}
+
+/* ===== render ===== */
+function editorBar(){
+  if (!editMode) return "";
+  return '<div class="edbar"><div class="wrap"><p><strong>Mode Editor aktif.</strong> Setiap perubahan langsung tersimpan dan terlihat oleh semua pengunjung. Untuk menambah editor, undang orangnya sebagai Editor lewat menu Share.</p>'
+    + '<button type="button" class="btn small" data-act="exit-edit">Selesai mengedit</button></div></div>';
+}
+function render(){
+  document.body.classList.toggle("editing", editMode);
+  var body = {beranda:vBeranda, profil:vProfil, akreditasi:vAkreditasi, dosen:vDosen, berita:vBerita, dokumen:vDokumen, kontak:vKontak}[view]();
+  root.innerHTML = header() + "<main>" + body + "</main>" + footer() + editorBar()
+    + '<div class="modal" id="modal" hidden></div><div id="toast-slot"></div>';
+  var q = document.getElementById("docq");
+  if (q) q.addEventListener("input", function(){ docQ = q.value; document.getElementById("doclist").innerHTML = docListHtml(); document.getElementById("doccount").textContent = docCount() + " dokumen"; });
+}
+function go(v){
+  if (VIEWS.indexOf(v) < 0) v = "beranda";
+  view = v; store.set("pti_view", v);
+  render();
+  try { window.scrollTo(0,0); } catch(e){}
+}
+
+var toastTimer;
+function toast(msg, err){
+  var slot = document.getElementById("toast-slot");
+  if (!slot) return;
+  slot.innerHTML = '<div class="toast' + (err ? " err" : "") + '" role="status">' + esc(msg) + "</div>";
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ slot.innerHTML = ""; }, err ? 6000 : 3000);
+}
+
+/* ===== formulir ===== */
+var FORMS = {
+  dosen:{title:"dosen", fields:[
+    {k:"nama", label:"Nama lengkap dan gelar", req:1, full:1},
+    {k:"jabatan", label:"Jabatan", hint:"Contoh: Ketua Program Studi, Dosen Tetap"},
+    {k:"nidn", label:"NIDN"},
+    {k:"keahlian", label:"Bidang keahlian", full:1},
+    {k:"email", label:"Email", type:"email", full:1},
+    {k:"foto", label:"Foto", type:"photo", full:1, nameKey:"nama"}
+  ]},
+  berita:{title:"berita", fields:[
+    {k:"judul", label:"Judul", req:1, full:1},
+    {k:"kategori", label:"Jenis", type:"select", opts:["Berita","Pengumuman","Agenda"]},
+    {k:"tanggal", label:"Tanggal", type:"date", req:1},
+    {k:"isi", label:"Isi", type:"textarea", rows:7, req:1, full:1, hint:"Tekan Enter untuk paragraf baru."},
+    {k:"gambar", label:"Gambar berita", type:"photo", wide:1, full:1, hint:"Unggah gambar JPG atau PNG (maks. 5 MB). Gambar tampil langsung di berita."},
+    {k:"lampiranJudul", label:"Judul dokumen lampiran (opsional)", full:1, hint:"Contoh: Surat Edaran Jadwal Sidang, Brosur PMB 2026"},
+    {k:"link", label:"Link dokumen lampiran (opsional)", type:"url", full:1, hint:"Link Google Drive (akses: siapa saja yang memiliki link) atau postingan Instagram."},
+    {k:"file", label:"File lampiran (opsional)", type:"file", full:1, hint:"PDF atau gambar. File Word/Excel: simpan sebagai PDF dulu, atau pakai link Google Drive."}
+  ]},
+  dokumen:{title:"dokumen", fields:[
+    {k:"judul", label:"Judul dokumen", req:1, full:1},
+    {k:"link", label:"Link dokumen", type:"url", full:1, hint:"Google Drive: klik kanan file > Bagikan > “Siapa saja yang memiliki link” > Salin link."},
+    {k:"file", label:"File dokumen", type:"file", full:1, hint:"Unggah PDF atau gambar. Boleh diisi bersama link, salah satu saja juga boleh. File Word/Excel: simpan sebagai PDF dulu."},
+    {k:"kategori", label:"Kategori", list:1, hint:"Pilih atau ketik kategori baru."},
+    {k:"kode", label:"Kode / nomor dokumen"},
+    {k:"revisi", label:"Revisi"},
+    {k:"tanggal", label:"Tanggal berlaku", hint:"Contoh: Oktober 2026"},
+    {k:"format", label:"Format", type:"select", opts:["","PDF","DOCX","XLSX","PPTX","Folder","Link"]}
+  ]},
+  profil:{title:"profil & beranda", fields:[
+    {group:"Identitas"},
+    {k:"nama", label:"Nama program studi", req:1},
+    {k:"singkatan", label:"Singkatan (logo)", hint:"Maksimal 4 huruf"},
+    {k:"kampus", label:"Nama kampus", req:1, full:1},
+    {k:"tagline", label:"Kalimat pembuka di beranda", type:"textarea", rows:2, full:1},
+    {group:"Sambutan"},
+    {k:"sambutanNama", label:"Nama pemberi sambutan"},
+    {k:"sambutanJabatan", label:"Jabatan"},
+    {k:"sambutanTeks", label:"Isi sambutan", type:"textarea", rows:6, full:1},
+    {k:"sambutanFoto", label:"Foto pemberi sambutan", type:"photo", full:1, nameKey:"sambutanNama"},
+    {group:"Visi, misi, dan sejarah"},
+    {k:"visi", label:"Visi", type:"textarea", rows:3, full:1},
+    {k:"misi", label:"Misi", type:"textarea", rows:5, full:1, hint:"Satu baris untuk satu poin misi."},
+    {k:"sejarah", label:"Sejarah singkat", type:"textarea", rows:5, full:1}
+  ]},
+  akreditasi:{title:"data akreditasi", fields:[
+    {k:"peringkat", label:"Peringkat akreditasi", hint:"Contoh: Unggul, Baik Sekali, Baik"},
+    {k:"lembaga", label:"Lembaga akreditasi", hint:"Contoh: LAMDIK atau BAN-PT"},
+    {k:"nomorSK", label:"Nomor SK", full:1},
+    {k:"tanggalSK", label:"Tanggal SK", type:"date"},
+    {k:"berlaku", label:"Berlaku sampai", type:"date"},
+    {k:"sertifikat", label:"Link sertifikat", type:"url", full:1, hint:"Link Google Drive ke file sertifikat (akses: siapa saja yang memiliki link)."},
+    {k:"keterangan", label:"Keterangan tambahan", type:"textarea", rows:3, full:1}
+  ]},
+  kontak:{title:"kontak", fields:[
+    {k:"alamat", label:"Alamat sekretariat", type:"textarea", rows:3, full:1},
+    {k:"email", label:"Email", type:"email"},
+    {k:"telepon", label:"Telepon / WhatsApp"},
+    {k:"jam", label:"Jam layanan", full:1, hint:"Contoh: Senin–Jumat, 08.00–16.00"},
+    {k:"maps", label:"Link Google Maps", type:"url", full:1}
+  ]}
+};
+var SINGLE = {profil:1, kontak:1, akreditasi:1};
+var formCtx = null;   // {type, id, vals}
+var UPLOAD_MAX = 480;
+var FILE_MAX = 20 * 1024 * 1024;
+
+function fieldHtml(f, vals){
+  if (f.group) return '<div class="fgroup">' + esc(f.group) + "</div>";
+  var id = "f-" + f.k, v = vals[f.k] == null ? "" : vals[f.k];
+  var lab = esc(f.label) + (f.req ? "<em>*</em>" : "");
+  var hint = f.hint ? "<small>" + esc(f.hint) + "</small>" : "";
+  var cls = "field" + (f.full ? " full" : "");
+  if (f.type === "photo"){
+    var ctl = assets
+      ? '<label class="btn small ghost" for="' + id + '" style="cursor:pointer">' + (f.wide ? (v ? "Ganti gambar" : "Unggah gambar") : "Unggah foto") + '</label><input id="' + id + '" type="file" accept="image/*" data-photo="' + f.k + '" hidden>'
+        + (v ? '<button type="button" class="btn small ghost" data-act="photo-clear" data-k="' + f.k + '">' + (f.wide ? "Hapus gambar" : "Hapus foto") + "</button>" : "")
+      : '<small>Unggah foto tidak tersedia di tampilan ini.</small>';
+    var prev = f.wide ? (v ? '<img class="ph-wide" src="' + esc(blob(v)) + '" alt="">' : '<div class="ph-wide ph-none">Belum ada gambar</div>') : avatar(vals[f.nameKey] || "?", v);
+    return '<div class="' + cls + '"><span>' + lab + '</span><div class="photo' + (f.wide ? " wide" : "") + '" id="ph-' + f.k + '">' + prev + '<div class="btns">' + ctl + "</div></div>" + hint + "</div>";
+  }
+  if (f.type === "file"){
+    var nm = vals[f.k + "Name"] || (v ? "File terlampir" : "");
+    var fctl = assets
+      ? '<label class="btn small ghost" for="' + id + '" style="cursor:pointer">' + (v ? "Ganti file" : "Unggah file") + '</label><input id="' + id + '" type="file" accept="application/pdf,image/*" data-file="' + f.k + '" hidden>'
+        + (v ? '<button type="button" class="btn small ghost" data-act="file-clear" data-k="' + f.k + '">Hapus file</button>' : "")
+      : '<small>Unggah file tidak tersedia di tampilan ini.</small>';
+    return '<div class="' + cls + '"><span>' + lab + '</span><div class="filebox" id="fb-' + f.k + '">'
+      + (v ? '<span class="fname"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>' + esc(nm) + "</span>" : '<span class="fname none">Belum ada file</span>')
+      + '<div class="btns">' + fctl + "</div></div>" + hint + "</div>";
+  }
+  var input;
+  if (f.type === "textarea") input = '<textarea id="' + id + '" name="' + f.k + '" rows="' + (f.rows||4) + '"' + (f.req ? " required" : "") + ">" + esc(v) + "</textarea>";
+  else if (f.type === "select") input = '<select id="' + id + '" name="' + f.k + '">' + f.opts.map(function(o){ return '<option value="' + esc(o) + '"' + (o === v ? " selected" : "") + ">" + esc(o || "(kosong)") + "</option>"; }).join("") + "</select>";
+  else input = '<input id="' + id + '" name="' + f.k + '" type="' + (f.type === "date" ? "date" : f.type === "email" ? "email" : f.type === "url" ? "url" : "text") + '" value="' + esc(v) + '"' + (f.req ? " required" : "") + (f.list ? ' list="kat-list"' : "") + (f.type === "url" ? ' placeholder="https://"' : "") + ">";
+  return '<label class="' + cls + '" for="' + id + '"><span>' + lab + "</span>" + input + hint + "</label>";
+}
+function openForm(type, id, preset){
+  var spec = FORMS[type], vals;
+  if (SINGLE[type]) vals = Object.assign({}, S[type]);
+  else if (id) vals = Object.assign({}, (S[type].filter(function(x){ return x.id === id; })[0] || {}));
+  else vals = Object.assign(type === "berita" ? {kategori:"Berita", tanggal:today()} : {}, preset || {});
+  formCtx = {type:type, id:id || null, vals:vals};
+  var title = SINGLE[type] ? "Ubah " + spec.title : (id ? "Ubah " : "Tambah ") + spec.title;
+  var cats = S.kategori.slice(); docCats().forEach(function(c){ if (cats.indexOf(c) < 0) cats.push(c); });
+  var m = document.getElementById("modal");
+  m.innerHTML = '<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="ftitle"><header><h3 id="ftitle">' + esc(title) + '</h3><button type="button" data-act="close" aria-label="Tutup">×</button></header>'
+    + '<form id="eform" novalidate><div class="fgrid">' + spec.fields.map(function(f){ return fieldHtml(f, vals); }).join("") + "</div>"
+    + '<datalist id="kat-list">' + cats.map(function(c){ return '<option value="' + esc(c) + '">'; }).join("") + "</datalist>"
+    + '<div class="form-foot"><button type="submit" class="btn" id="fsave">Simpan</button><button type="button" class="btn ghost" data-act="close">Batal</button><span class="fmsg" id="fmsg" role="status"></span></div></form></div>';
+  m.hidden = false;
+  var first = m.querySelector("input:not([type=file]),textarea,select");
+  if (first) first.focus();
+  m.querySelectorAll("input[data-photo]").forEach(function(inp){ inp.addEventListener("change", function(){ uploadPhoto(inp); }); });
+  m.querySelectorAll("input[data-file]").forEach(function(inp){ inp.addEventListener("change", function(){ uploadFile(inp); }); });
+  document.getElementById("eform").addEventListener("submit", submitForm);
+}
+function closeForm(){ var m = document.getElementById("modal"); if (m){ m.hidden = true; m.innerHTML = ""; } formCtx = null; }
+function fmsg(t, err){ var el = document.getElementById("fmsg"); if (el){ el.textContent = t || ""; el.className = "fmsg" + (err ? " err" : ""); } }
+function readForm(){
+  FORMS[formCtx.type].fields.forEach(function(f){
+    if (!f.k || f.type === "photo" || f.type === "file") return;
+    var el = document.getElementById("f-" + f.k);
+    if (el) formCtx.vals[f.k] = el.value.trim();
+  });
+}
+function refreshPhoto(k){
+  var f = FORMS[formCtx.type].fields.filter(function(x){ return x.k === k; })[0];
+  readForm();
+  var wrapEl = document.getElementById("ph-" + k);
+  var tmp = document.createElement("div");
+  tmp.innerHTML = fieldHtml(f, formCtx.vals);
+  wrapEl.replaceWith(tmp.querySelector(".photo"));
+  var inp = document.querySelector('input[data-photo="' + k + '"]');
+  if (inp) inp.addEventListener("change", function(){ uploadPhoto(inp); });
+}
+function uploadPhoto(inp){
+  var file = inp.files && inp.files[0];
+  if (!file || !assets) return;
+  if (!/^image\//.test(file.type)){ fmsg("Pilih file gambar (JPG atau PNG).", true); return; }
+  if (file.size > 5 * 1024 * 1024){ fmsg("Ukuran gambar maksimal 5 MB.", true); return; }
+  var spec = FORMS[formCtx.type].fields.filter(function(x){ return x.k === inp.dataset.photo; })[0] || {};
+  UPLOAD_MAX = spec.wide ? 1280 : 480;
+  fmsg("Mengunggah gambar…");
+  assets.upload(file).then(function(r){
+    formCtx.vals[inp.dataset.photo] = r.id;
+    refreshPhoto(inp.dataset.photo);
+    fmsg("Gambar terunggah. Klik Simpan untuk menyimpan.");
+  }).catch(function(){ fmsg("Gambar gagal diunggah. Coba file lain atau ulangi.", true); });
+}
+function refreshFile(k){
+  var f = FORMS[formCtx.type].fields.filter(function(x){ return x.k === k; })[0];
+  readForm();
+  var tmp = document.createElement("div");
+  tmp.innerHTML = fieldHtml(f, formCtx.vals);
+  document.getElementById("fb-" + k).replaceWith(tmp.querySelector(".filebox"));
+  var inp = document.querySelector('input[data-file="' + k + '"]');
+  if (inp) inp.addEventListener("change", function(){ uploadFile(inp); });
+}
+function uploadFile(inp){
+  var file = inp.files && inp.files[0];
+  if (!file || !assets) return;
+  if (!/^application\/pdf$|^image\//.test(file.type)){ fmsg("File harus PDF atau gambar. Untuk Word/Excel, simpan sebagai PDF dulu atau pakai link Google Drive.", true); return; }
+  if (file.size > FILE_MAX){ fmsg("Ukuran file maksimal " + Math.round(FILE_MAX / 1048576) + " MB. Untuk file besar, pakai link Google Drive.", true); return; }
+  UPLOAD_MAX = 1600;
+  fmsg("Mengunggah file\u2026");
+  assets.upload(file).then(function(r){
+    formCtx.vals[inp.dataset.file] = r.id;
+    formCtx.vals[inp.dataset.file + "Name"] = file.name;
+    refreshFile(inp.dataset.file);
+    fmsg("File terunggah. Klik Simpan untuk menyimpan.");
+  }).catch(function(e){ fmsg(e && e.code === "unsupported_type" ? "Jenis file ini tidak didukung. Gunakan PDF." : "File gagal diunggah. Coba lagi.", true); });
+}
+function submitForm(e){
+  e.preventDefault();
+  if (!formCtx) return;
+  readForm();
+  var spec = FORMS[formCtx.type], v = formCtx.vals;
+  for (var i = 0; i < spec.fields.length; i++){
+    var f = spec.fields[i];
+    if (!f.k) continue;
+    if (f.req && !String(v[f.k]||"").trim()){ fmsg("Kolom “" + f.label + "” wajib diisi.", true); var el = document.getElementById("f-" + f.k); if (el) el.focus(); return; }
+    if (f.type === "url" && v[f.k] && !isUrl(v[f.k])){ fmsg("Link “" + f.label + "” harus diawali https://", true); document.getElementById("f-" + f.k).focus(); return; }
+  }
+  var type = formCtx.type, id = formCtx.id, label = spec.title;
+  commit(function(st){
+    if (SINGLE[type]){
+      st[type] = Object.assign({}, st[type], v);
+      if (type === "profil") st.profil.singkatan = String(st.profil.singkatan||"").slice(0,4);
+      if (type === "akreditasi"){ st.profil.akreditasi = st.akreditasi.peringkat; st.profil.akreditasiKet = st.akreditasi.keterangan; }
+      return;
+    }
+    if (type === "dokumen" && v.kategori && st.kategori.indexOf(v.kategori) < 0) st.kategori.push(v.kategori);
+    if (id){
+      st[type] = st[type].map(function(x){ return x.id === id ? Object.assign({}, x, v, {id:id}) : x; });
+    } else {
+      st[type].push(Object.assign({}, v, {id:uid(), dibuat:today()}));
+    }
+  }, SINGLE[type] ? "Perubahan " + label + " tersimpan." : (id ? "Perubahan tersimpan." : "Data " + label + " ditambahkan."));
+}
+
+/* ===== simpan ===== */
+var READONLY = ["not_writer","not_granted","not_declared","capability_disabled","capability_removed","consent_required"];
+function commit(mutate, okMsg){
+  if (busy || !art) return;
+  busy = true;
+  var btn = document.getElementById("fsave");
+  if (btn){ btn.disabled = true; fmsg("Menyimpan…"); }
+  var next = JSON.parse(JSON.stringify(S));
+  mutate(next);
+  store.set("pti_edit", "1"); store.set("pti_view", view); store.set("pti_toast", okMsg);
+  art.publish(buildDoc(next)).then(function(){
+    S = next; closeForm(); render(); toast(okMsg);   // halaman akan dimuat ulang ke versi baru
+    busy = false;
+  }).catch(function(err){
+    busy = false;
+    store.set("pti_toast", null);
+    if (btn){ btn.disabled = false; }
+    var c = err && err.code;
+    if (c === "conflict"){ store.set("pti_toast", "Ada perubahan dari editor lain. Halaman dimuat ulang, silakan ulangi perubahan Anda."); fmsg("Ada perubahan dari editor lain. Memuat ulang…", true); return; }
+    if (READONLY.indexOf(c) >= 0){ canEdit = false; editMode = false; store.set("pti_edit", null); closeForm(); render(); toast("Halaman ini hanya bisa dilihat. Perubahan tidak tersimpan.", true); return; }
+    var msg = c === "too_large" ? "Data terlalu besar untuk disimpan." : c === "rate_limited" ? "Terlalu sering menyimpan. Tunggu sebentar lalu coba lagi." : "Gagal menyimpan. Periksa koneksi lalu coba lagi.";
+    if (document.getElementById("eform")) fmsg(msg, true); else toast(msg, true);
+  });
+}
+function removeItem(type, id){
+  var item = S[type].filter(function(x){ return x.id === id; })[0];
+  if (!item) return;
+  commit(function(st){ st[type] = st[type].filter(function(x){ return x.id !== id; }); }, "“" + (item.judul || item.nama) + "” dihapus.");
+}
+
+/* ===== klik ===== */
+function copyText(text, btn){
+  var done = function(){ var t = btn.textContent; btn.textContent = "Tersalin"; setTimeout(function(){ btn.textContent = t; }, 1500); };
+  var fallback = function(){ var r = document.createRange(); var s = document.createElement("span"); s.textContent = text; s.style.cssText = "position:fixed;left:-9999px"; document.body.appendChild(s); r.selectNodeContents(s); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); try { document.execCommand("copy"); done(); } catch(e){ toast("Tekan Ctrl + C untuk menyalin."); } s.remove(); };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch(e){ fallback(); }
+}
+root.addEventListener("click", function(e){
+  var g = e.target.closest("[data-go]");
+  if (g){ e.preventDefault(); go(g.dataset.go); return; }
+  var b = e.target.closest("[data-act]");
+  if (!b) return;
+  var act = b.dataset.act;
+  if (act === "enter-edit"){ editMode = true; store.set("pti_edit","1"); render(); toast("Mode Editor aktif. Gunakan tombol Tambah, Ubah, dan Hapus."); }
+  else if (act === "exit-edit"){ editMode = false; store.set("pti_edit", null); render(); }
+  else if (act === "add") openForm(b.dataset.type, null, b.dataset.kat ? {kategori:b.dataset.kat} : null);
+  else if (act === "edit") openForm(b.dataset.type, b.dataset.id);
+  else if (act === "form") openForm(b.dataset.type);
+  else if (act === "close") closeForm();
+  else if (act === "photo-clear"){ formCtx.vals[b.dataset.k] = ""; refreshPhoto(b.dataset.k); }
+  else if (act === "file-clear"){ formCtx.vals[b.dataset.k] = ""; formCtx.vals[b.dataset.k + "Name"] = ""; refreshFile(b.dataset.k); }
+  else if (act === "del"){
+    if (b.dataset.confirm !== "1"){ b.dataset.confirm = "1"; b.textContent = "Yakin hapus?"; setTimeout(function(){ if (b.isConnected){ b.dataset.confirm = ""; b.textContent = "Hapus"; } }, 4000); return; }
+    b.disabled = true; b.textContent = "Menghapus…";
+    removeItem(b.dataset.type, b.dataset.id);
+  }
+  else if (act === "doc-cat"){ docCat = b.dataset.cat; render(); }
+  else if (act === "news-cat"){ newsCat = b.dataset.cat; render(); }
+  else if (act === "more"){ var body = b.closest(".post").querySelector(".body"); body.classList.toggle("clamp"); b.textContent = body.classList.contains("clamp") ? "Baca selengkapnya" : "Tutup"; }
+  else if (act === "copy") copyText(b.dataset.link, b);
+  else if (act === "welcome-more"){ var wt = b.parentNode.querySelector(".wl-text"); wt.classList.toggle("clamped"); b.textContent = wt.classList.contains("clamped") ? "Baca sambutan lengkap" : "Tutup sambutan"; }
+});
+root.addEventListener("click", function(e){ if (e.target.id === "modal") closeForm(); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape" && formCtx) closeForm(); });
+
+/* ===== mulai ===== */
+var h = (location.hash || "").replace("#","");
+go(VIEWS.indexOf(h) >= 0 ? h : (store.get("pti_view") || "beranda"));
+
+var C = window.claude;
+if (C && C.use){
+  Promise.all([C.use("artifact"), C.use("user")]).then(function(r){
+    art = r[0];
+    var user = r[1];
+    if (!art || !user) return false;
+    return user.canEdit();
+  }).then(function(ok){
+    if (!ok) return;
+    canEdit = true;
+    editMode = store.get("pti_edit") === "1";
+    return C.use("assets").then(function(a){ assets = a; });
+  }).then(function(){
+    render();
+    var t = store.get("pti_toast");
+    if (t){ store.set("pti_toast", null); toast(t); }
+  }).catch(function(){});
+}
+})();
+</script>
+</body></html>
